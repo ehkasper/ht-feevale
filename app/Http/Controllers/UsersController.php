@@ -39,9 +39,10 @@ class UsersController extends Controller {
         return redirect('/user')->with('message', 'Usuário criado com sucesso');
     }
 
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, $id)
     {
-        $user->id    = $request->id;
+        $user = User::findOrFail($id);
+
         $user->name  = $request->name;
         $user->email = $request->email;
 
