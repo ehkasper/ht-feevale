@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Http\Requests\UserRequest;
+use App\Events\UserRegistered;
 
 class UsersController extends Controller {
 
@@ -22,21 +23,21 @@ class UsersController extends Controller {
         ]);
     }
 
-    public function edit($id)
-    {
-        return view('users.edit', [
-            'user' => User::find($id)
-        ]);
-    }
-
     public function store(UserRequest $request, User $user)
     {
 
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
-
+      //  event(new UserRegistered($user));
         return redirect('/user')->with('message', 'Usuário criado com sucesso');
+    }
+
+    public function edit($id)
+    {
+        return view('users.edit', [
+            'user' => User::find($id)
+        ]);
     }
 
     public function update(UserRequest $request, $id)
@@ -55,6 +56,6 @@ class UsersController extends Controller {
     {
         User::destroy($id);
 
-        return redirect('/user')->with('message', 'Usuário excluído com success');
+        return redirect('/user')->with('message', 'Usuário excluído com successo');
     }
 }

@@ -2,6 +2,8 @@
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use App\Observers\UserObserver;
+use App\User;
 
 class EventServiceProvider extends ServiceProvider {
 
@@ -11,9 +13,9 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
-		],
+		'App\Events\UserRegistered' => [
+	        'App\Handlers\Events\SendRegistrationEmail',
+	    ],
 	];
 
 	/**
@@ -26,7 +28,7 @@ class EventServiceProvider extends ServiceProvider {
 	{
 		parent::boot($events);
 
-		//
+        User::observe(new UserObserver);
 	}
 
 }

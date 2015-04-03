@@ -16,7 +16,7 @@ return [
 	|
 	*/
 
-	'default' => env('QUEUE_DRIVER', 'sync'),
+	'default' => 'iron',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -60,9 +60,9 @@ return [
 		'iron' => [
 			'driver'  => 'iron',
 			'host'    => 'mq-aws-us-east-1.iron.io',
-			'token'   => 'your-token',
-			'project' => 'your-project-id',
-			'queue'   => 'your-queue-name',
+			'token'   => 'kOyWAXS3BQQ5QbkyoQvAo6WHr6o',
+			'project' => '551f02cc81eb0e000900005c',
+			'queue'   => 'HT-feevale',
 			'encrypt' => true,
 		],
 
