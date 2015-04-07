@@ -4,7 +4,7 @@ use App\Events\UserRegistered;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use Mail;
 
-class SendRegistrationEmail {
+class SendRegistrationEmail implements ShouldBeQueued {
 
 
 	/**
