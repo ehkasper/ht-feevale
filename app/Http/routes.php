@@ -5,11 +5,26 @@ get('/', function () {
 });
 
 
-Route::resource('user', 'UsersController');
+resource('user', 'UsersController');
 
 
-/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::post('queue/ht-feevale', function()
 {
     return Queue::marshal();
-});*/
+});
