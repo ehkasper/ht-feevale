@@ -2,8 +2,9 @@
 
 use App\Events\UserRegistered;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use Mail;
 
-class SendRegistrationEmail implements ShouldBeQueued {
+class SendRegistrationEmail {
 
 
 	/**
@@ -24,8 +25,9 @@ class SendRegistrationEmail implements ShouldBeQueued {
 	 */
 	public function handle(UserRegistered $event)
 	{
-		\Mail::send('users.registration', [], function ($message) use ($event) {
-			$message->to($event->to)->subject('Usuário Registrado');
+		Mail::send('users.registration', [], function ($message) use ($event) {
+			$message->to($event->to);
+			$message->subject('Usuário Registrado');
 		});
 	}
 

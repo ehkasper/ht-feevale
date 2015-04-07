@@ -14,7 +14,7 @@ class EventServiceProvider extends ServiceProvider {
 	 */
 	protected $listen = [
 		'App\Events\UserRegistered' => [
-	        'App\Handlers\Events\SendRegistrationEmail',
+			'App\Handlers\Events\SendRegistrationEmail',
 	    ],
 	];
 

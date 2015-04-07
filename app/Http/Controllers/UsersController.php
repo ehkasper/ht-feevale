@@ -29,7 +29,7 @@ class UsersController extends Controller {
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
-      //  event(new UserRegistered($user));
+
         return redirect('/user')->with('message', 'Usuário criado com sucesso');
     }
 

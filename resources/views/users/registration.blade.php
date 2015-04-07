@@ -5,9 +5,6 @@
     <title>Novo Cadastro</title>
 </head>
 <body>
-    Obrigado por vir ao evento!
-
-    Cheers,
-    Equipe HT Fevale.
+    Obrigado por vir na Hora da Tecnologia!
 </body>
 </html>

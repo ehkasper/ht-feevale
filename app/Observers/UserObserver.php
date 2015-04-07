@@ -9,4 +9,5 @@ class UserObserver
     {
         event(new UserRegistered($user));
     }
+
 }
