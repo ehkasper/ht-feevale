@@ -9,6 +9,8 @@
 	<div class="clearfix"></div>
 	<br>
 
+
+
 	<table class="table table-striped">
 		@foreach ($users as $user)
 		<tr>
@@ -20,6 +22,8 @@
 		</tr>
 		@endforeach
 	</table>
+
+
 
 </div>
 
