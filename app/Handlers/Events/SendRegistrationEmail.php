@@ -25,7 +25,7 @@ class SendRegistrationEmail {
 	 */
 	public function handle(UserRegistered $event)
 	{
-		Mail::send('users.registration', [], function ($message) use ($event) {
+		Mail::queue('users.registration', [], function ($message) use ($event) {
 			$message->to($event->to);
 			$message->subject('Usuário Registrado');
 		});
