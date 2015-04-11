@@ -8,7 +8,9 @@
 	{!! link_to('/user/create', 'Novo Usuário', ['class' => 'pull-right btn btn-default']) !!}
 	<div class="clearfix"></div>
 	<br>
-
+	<div class="alert alert-success">
+		Obrigado por participar.
+	</div>
 
 
 	<table class="table table-striped">
